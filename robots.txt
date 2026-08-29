@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mrbosscode.github.io/Mr-Boss/sitemap.xml
