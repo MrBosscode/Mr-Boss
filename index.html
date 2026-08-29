@@ -257,6 +257,7 @@
     <button class="chip" data-filter="dard">Dard</button>
     <button class="chip" data-filter="junoon">Junoon</button>
     <button class="chip" data-filter="sukoon">Sukoon</button>
+    <button class="chip" data-filter="anime">Anime</button>
   </div>
 
   <div class="grid" id="grid"></div>
@@ -303,6 +304,20 @@
     {cat:'dard', quote:'Muskurahat ke peeche kahani chhupi hai.', img:'https://picsum.photos/seed/dard2/500/900'},
     {cat:'junoon', quote:'Girkar sambhalna hi asli junoon hai.', img:'https://picsum.photos/seed/junoon2/500/900'},
     {cat:'sukoon', quote:'Chai ki chuski, dil ko sukoon deti hai.', img:'https://picsum.photos/seed/sukoon2/500/900'},
+
+    // ANIME WALLPAPERS — replace "images/anime1.jpg" etc. with your own uploaded file names.
+    // Upload your images inside a folder named "images" in your GitHub repo, then just
+    // change the file name here to match (quote text is optional, edit or remove it).
+    {cat:'anime', quote:'Har raat ek naya anime, har din ek nayi kahani.', img:'images/anime1.jpg'},
+    {cat:'anime', quote:'', img:'images/anime2.jpg'},
+    {cat:'anime', quote:'', img:'images/anime3.jpg'},
+    {cat:'anime', quote:'', img:'images/anime4.jpg'},
+    {cat:'anime', quote:'', img:'images/anime5.jpg'},
+    {cat:'anime', quote:'', img:'images/anime6.jpg'},
+    {cat:'anime', quote:'', img:'images/anime7.jpg'},
+    {cat:'anime', quote:'', img:'images/anime8.jpg'},
+    {cat:'anime', quote:'', img:'images/anime9.jpg'},
+    {cat:'anime', quote:'', img:'images/anime10.jpg'},
   ];
 
   const grid = document.getElementById('grid');
@@ -314,10 +329,10 @@
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
-          <img src="${w.img}" alt="${w.quote}" loading="lazy">
+          <img src="${w.img}" alt="${w.quote || 'wallpaper'}" loading="lazy">
           <div class="card-overlay">
-            <div class="card-quote">${w.quote}</div>
-            <a class="download-btn" href="${w.img}" download target="_blank">⬇ Download</a>
+            ${w.quote ? `<div class="card-quote">${w.quote}</div>` : ''}
+            <a class="download-btn" href="${w.img}" download>⬇ Download</a>
           </div>`;
         grid.appendChild(card);
       });
